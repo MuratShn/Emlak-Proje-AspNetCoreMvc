@@ -1,0 +1,33 @@
+﻿<div class="card-deck">
+    @{
+
+
+        foreach (var item in Model)
+        {
+            <div class="card">
+                <img class="card-img-top" src="~/img/1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Baslik</h5>
+                    <p class="card-text">@item.Acıklama</p>
+                    <small class="text-muted">
+                        Oda Sayısı: @item.OdaSayi + @item.SalonSayi  &#160;&#160;
+                        Kat: @item.Katsayi  &#160;&#160;
+                        Bina Yaşı : @item.Yas   &#160;&#160;
+                        Metre Kare : @item.Metrekare
+                    </small>
+                    <blockquote class="blockquote">
+                        <p class="mb-0 font-weight-bold">Fiyat: @item.Fiyat ₺</p>
+                        <a class="badge badge-primary float-right mr-3 text-decoration-none" asp-action="Detay" asp-route-Id="@item.Id">İlana Git</a>
+                    </blockquote>
+
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"> @item.Tarih</small>
+                </div>
+            </div>
+        }
+
+
+
+    }
+</div>

@@ -1,0 +1,86 @@
+﻿@model EmlakOfis.Models.İlanEkle
+
+@{
+    ViewData["Title"] = "Güncelle";
+    Layout = "~/Views/Shared/_LayoutAgent.cshtml";
+    ViewBag.Id = ViewBag.Id;
+}
+
+<form asp-action="Güncelle" asp-controller="Agent" asp-route-emlak="@ViewBag.Id" method="post">
+
+    <div class="form-outline mb-4">
+        <input type="text" asp-for="Baslik" class="form-control" /> <span asp-validation-for="Baslik"></span>
+        <label class="form-label" for="form6Example3">Başlık</label>
+    </div>
+
+    <div class="row mb-3 mt-3">
+        <div class="col">
+            <div class="form">
+                <input type="text" asp-for="OdaSayi" class="form-control" /> <span asp-validation-for="OdaSayi"></span>
+                <label class="form-label" for="form6Example1">Oda Sayısı</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <input type="text" asp-for="SalonSayi" class="form-control" /> <span asp-validation-for="SalonSayi"></span>
+                <label class="form-label" for="form6Example2">Salon Sayısı</label>
+            </div>
+
+            <div class="col">
+                <div class="form Boş">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <input type="text" asp-for="Metrekare" class="form-control" /> <span asp-validation-for="Metrekare"></span>
+                <label class="form-label" for="form6Example2">Metre Kare</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <input type="text" asp-for="Katsayi" class="form-control" /> <span asp-validation-for="Katsayi"></span>
+                <label class="form-label" for="form6Example2"> Kat Sayısı</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form">
+                <input type="text" asp-for="Yas" class="form-control" /> <span asp-validation-for="Yas"></span>
+                <label class="form-label" for="form6Example2">Yaş</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3 mt-3">
+        <div class="form-group col-md-4">
+            <label>Durum</label>
+            @Html.DropDownListFor(m => m._Kategori.Id, (List<SelectListItem>)ViewBag.durum, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-4">
+            <label>Sehir</label>
+            @Html.DropDownListFor(m => m._Sehir.Id, (List<SelectListItem>)ViewBag.sehir, new { @class = "form-control" })
+        </div>
+    </div>
+
+
+    <div class="form-outline mb-4">
+        <input type="text" asp-for="Mahalle" class="form-control" /> <span asp-validation-for="Mahalle"></span>
+        <label class="form-label" for="form6Example4">Mahalle</label>
+    </div>
+
+
+    <div class="form-outline mb-4">
+        <input type="number" asp-for="Fiyat" class="form-control" /> <span asp-validation-for="Fiyat"> </span>
+        <label class="form-label" for="form6Example5">Fiyat</label>
+    </div>
+
+
+    <div class="form-outline mb-4">
+        <textarea class="form-control" asp-for="Acıklama" rows="7"></textarea> <span asp-validation-for="Acıklama"></span>
+        <label class="form-label" for="form6Example7">Açıklama</label>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary btn-block mb-4">Ekle</button>
+</form>

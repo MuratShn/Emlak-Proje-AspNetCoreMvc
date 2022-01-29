@@ -1,0 +1,23 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-nav nav-item ml-5 font-weight-bold h2 text-decoration-none text-white" asp-controller="Home" asp-action="Index">Emlak Ofisi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ml-5">
+                <a class="nav-link text-white font-italic h4" asp-controller="Home" asp-action="Kiralık">Kiralık</a>
+            </li>
+            <li class="nav-item ml-3">
+                <a class="nav-link left font-italic text-white h4" asp-controller="Home" asp-action="Satılık">Satılık</a>
+            </li>
+            <li class="nav-item ml-3">
+                <a class="nav-link left font-italic text-white h4" asp-controller="Home" asp-action="Tümİlanlar">Tüm İlanlar</a>
+            </li>
+        </ul>
+        <form class="form-inline">
+            <a asp-action="Giris" asp-controller="Login" class="text-decoration-none btn-outline-info btn-lg text-white bg-danger ">Giriş</a>
+        </form>
+    </div>
+</nav>

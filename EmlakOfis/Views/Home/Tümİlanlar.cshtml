@@ -1,0 +1,44 @@
+﻿@model List<EvViewModel>
+
+    <form asp-action="Tümİlanlar" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>İsim</label>
+                <input class="form-control" type="text" name="arama" />
+                <button class="btn btn-success"> Arama </button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"> İlan Başlığı </th>
+                <th scope="col"> m²</th>
+                <th scope="col"> Oda Sayısı</th>
+                <th scope="col"> <a asp-action="Tümİlanlar" asp-route-sırala="@Model[0].Sırala" asp-route-kolon="Fiyat">Fiyat ↓↑</a> </th>
+                <th scope="col"> <a asp-action="Tümİlanlar" asp-route-sırala="@Model[0].Sırala" asp-route-kolon="Tarih">İlan Tarihi ↓↑</a> </th>
+                <th scope="col">Şehir</th>
+                <th scope="col"> <a asp-action="Tümİlanlar" asp-route-sırala="@Model[0].Sırala" asp-route-kolon="Durum"> Durum ↓↑ </a> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row"><a asp-controller="Home" asp-action="Detay" asp-route-Id="@item.Id" class="text-decoration-none"><img style="height:80px; width:160px;" src="~/img/1.jpg" alt="Alternate Text" /></a> </th>
+                        <td><a asp-controller="Home" asp-action="Detay" asp-route-Id="@item.Id" class="text-decoration-none text-black">@item.Baslik</a></td>
+                        <td><a asp-controller="Home" asp-action="Detay" asp-route-Id="@item.Id" class="text-decoration-none text-black">@item.Metrekare m²</a></td>
+                        <td><a asp-controller="Home" asp-action="Detay" asp-route-Id="@item.Id" class="text-decoration-none text-black">@item.OdaSayi + @item.SalonSayi</a></td>
+                        <td><a asp-controller="Home" asp-action="Detay" asp-route-Id="@item.Id" class="text-decoration-none text-black">@item.Fiyat TL</a></td>
+                        <td><a asp-controller="Home" asp-action="Detay" asp-route-Id="@item.Id" class="text-decoration-none text-black">@item.Tarih.ToString("d MMMM yyyy") </a></td>
+                        <td><a asp-controller="Home" asp-action="Detay" asp-route-Id="@item.Id" class="text-decoration-none text-black">@item.Sehir</a></td>
+                        <td><a asp-controller="Home" asp-action="Detay" asp-route-Id="@item.Id" class="text-decoration-none text-black">@item.EvDurum</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    @*"*@

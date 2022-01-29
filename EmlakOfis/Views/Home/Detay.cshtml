@@ -1,0 +1,80 @@
+﻿@model List<EvDetayModel>
+
+<!-- Portfolio Item Heading -->
+<h2 class="my-4">
+    <small>@Model[0].Baslik </small>
+</h2>
+
+<!-- Portfolio Item Row -->
+<div class="row">
+
+    <div class="col-md-8">
+        <img class="img-fluid" src="~/img/1.jpg" alt="">
+    </div>
+
+    <div class="col-md-4">
+        <h3 class="my-3">İlan Özeliikleri</h3>
+        <ul class="list-group">
+            <li class="list-group-item ">
+                <strong>İlan Tarih</strong>&nbsp;&nbsp;&nbsp;
+                <span>@Model[0].Tarih.ToString("d MMMM yyyy")</span>
+            </li>
+            <li class="list-group-item ">
+                <strong>Emlak Tipi</strong>&nbsp;&nbsp;&nbsp;
+                <span>@Model[0].EvDurum</span>
+            </li>
+            <li class="list-group-item ">
+                <strong>m² (Net)</strong>&nbsp;&nbsp;&nbsp;
+                <span>@Model[0].Metrekare</span>
+            </li>
+            <li class="list-group-item ">
+                <strong>Oda Sayısı</strong>&nbsp;&nbsp;&nbsp;
+                <span>@Model[0].OdaSayi + @Model[0].SalonSayi</span>
+            </li>
+            <li class="list-group-item ">
+                <strong>Bina Yaşı</strong>&nbsp;&nbsp;&nbsp;
+                <span>@Model[0].Yas</span>
+            </li>
+            <li class="list-group-item ">
+                <strong>Kat Sayısı</strong>&nbsp;&nbsp;&nbsp;
+                <span>@Model[0].Katsayi</span>
+            </li>
+            <li class="list-group-item ">
+                <strong>Şehir</strong>&nbsp;&nbsp;&nbsp;
+                <span>@Model[0].Sehir</span>
+            </li>
+
+
+        </ul>
+
+        <h3 class="my-3">İlan Sahibi</h3>
+        <ul class="list-group">
+            <li class="list-group-item ">
+                <strong>Adı</strong>&nbsp;&nbsp;&nbsp;
+                <span>@Model[0].Ad</span>
+            </li>
+            <li class="list-group-item ">
+                <strong>Soyad</strong>&nbsp;&nbsp;&nbsp;
+                <span>@Model[0].Soyad</span>
+            </li>
+            <li class="list-group-item ">
+                <strong>Telefon</strong>&nbsp;&nbsp;&nbsp;
+                <span>@Model[0].Telefon</span>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+<!-- /.row -->
+<!-- Related Projects Row -->
+<br />
+<hr />
+<h3 class="my-4 text-center">Açıklama</h3>
+<hr />
+
+<div class="row">
+    <p class="text-center display-4">@Model[0].Acıklama</p>
+
+</div>
+<!-- /.row -->

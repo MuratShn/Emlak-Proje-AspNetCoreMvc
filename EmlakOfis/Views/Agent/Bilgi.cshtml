@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Bilgi";
+    Layout = "~/Views/Shared/_LayoutAgent.cshtml";
+}
+@model EmlakcıEkle
+
+
+<form asp-action="Bilgi" asp-controller="Agent"   method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">İsim</label>
+            <input asp-for="Ad" placeholder="@Model.Ad" class="form-control"> <span asp-validation-for="Ad"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputAddress">Soy İsim</label>
+            <input type="text" asp-for="Soyad" placeholder="@Model.Soyad" class="form-control"> <span asp-validation-for="Soyad"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword4">Şifre</label>
+        <input type="password" asp-for="Sifre"  class="form-control"> <span asp-validation-for="Sifre"></span>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputCity">Telefon</label>
+            <input type="text" asp-for="Telefon" placeholder="@Model.Telefon" class="form-control"> <span asp-validation-for="Telefon"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputCity">Kullanıcı Adı</label>
+            <input type="text" class="form-control" placeholder="@Model.KullaniciAdi" asp-for="KullaniciAdi"> <span asp-validation-for="KullaniciAdi"></span>
+        </div>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

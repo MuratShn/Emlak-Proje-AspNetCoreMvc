@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "İlanlar";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model List<EvDetayModel>
+<h1 class="text-center">Tüm İlanlar</h1>
+
+<table class="table table-hover table-info">
+    <thead>
+        <tr>
+            <th scope="col">İlan Id</th>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Oda Sayısı</th>
+            <th scope="col">MetreKare</th>
+            <th scope="col">Sehir</th>
+            <th scope="col">Durum</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Fiyat</th>
+            <th scope="col">İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.Id</th>
+                    <td>@item.Ad</td>
+                    <td>@item.Soyad</td>
+                    <td>@item.OdaSayi + @item.SalonSayi</td>
+                    <td>@item.Metrekare</td>
+                    <td>@item.Sehir</td>
+                    <td>@item.EvDurum</td>
+                    <td>@item.Tarih.ToString("d MMMM yyyy")</td>
+                    <td>@item.Fiyat</td>
+                    <td><a  class="btn btn-danger text-white" asp-action="İlanSil" asp-route-Id="@item.Id">Sil</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+﻿@model List<EvDetayModel>
+@{
+    Layout = "~/Views/Shared/_LayoutAgent.cshtml";
+    ViewBag.Title = ViewBag.Title;
+    ViewBag.Id = ViewBag.Id;
+}
+
+
+<h1 class="text-center">İlanların</h1>
+
+<table class="table table-hover table-info">
+    <thead>
+        <tr>
+            <th scope="col">İlan Id</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Oda Sayısı</th>
+            <th scope="col">MetreKare</th>
+            <th scope="col">Bina Yaşı</th>
+            <th scope="col">Kat Sayı</th>
+            <th scope="col">Sehir</th>
+            <th scope="col">Durum</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Fiyat</th>
+            <th scope="col">İşlem</th>
+            <th scope="col">İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.Id</th>
+                    <td>@item.Baslik</td>
+                    <td>@item.OdaSayi + @item.SalonSayi</td>
+                    <td>@item.Metrekare</td>
+                    <td>@item.Yas</td>
+                    <td>@item.Katsayi</td>
+                    <td>@item.Sehir</td>
+                    <td>@item.EvDurum</td>
+                    <td>@item.Tarih.ToString("d MMMM yyyy")</td>
+                    <td>@item.Fiyat</td>
+                    <td><a class="btn btn-danger text-white" asp-action="Sil" asp-route-emlak="@ViewBag.Id" asp-route-Id="@item.Id">Sil</a></td>
+                    <td><a class="btn btn-danger text-white" asp-action="Güncelle" asp-route-emlak="@ViewBag.Id" asp-route-Id="@item.Id">Güncelle</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

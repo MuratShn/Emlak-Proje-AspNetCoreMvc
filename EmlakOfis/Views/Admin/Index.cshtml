@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model AdminViewIndex
+
+<h1>Index</h1>
+
+    <div class="card text-white bg-primary mb-3 " style="max-width: 18rem;">
+        <div class="card-header">Admin Sayısı</div>
+        <div class="card-body">
+            <h5 class="card-title"> <strong>@Model.AdminSayi</strong></h5>
+        </div>
+
+    </div>
+
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Emlakcı Sayısı</div>
+        <div class="card-body">
+            <h5 class="card-title"> <strong>@Model.EmlakciSayi</strong> </h5>
+        </div>
+    </div>
+
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">İlan Sayısı</div>
+        <div class="card-body">
+            <h5 class="card-title"> <strong>@Model.İlanSayi</strong> </h5>
+        </div>
+    </div>
